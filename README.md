@@ -10,6 +10,7 @@
 # 画面用
 REACT_APP_IVS_STREAM=https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/video/v1/us-west-2.893648527354.channel.xhP3ExfcX8ON.m3u8
 REACT_APP_WS_URL=ws://localhost:8080/
+REACT_APP_HASHTAG='#jawssonic2020'
 # Twitter開発キー
 TWITTER_CONSUMER_KEY=
 TWITTER_CONSUMER_SECRET=

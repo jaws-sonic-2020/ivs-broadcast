@@ -19,19 +19,28 @@ const hashtag = process.env['HASHTAG']!.toUpperCase()
 
 ws.on('open', () => {
   console.log('open')
-  client.stream('statuses/filter', { track: `#${hashtag}` }, (stream: EventEmitter) => {
-    stream.on('data', (tweet: any) => {
-      if (!tweet.retweeted_status) {
-        const hashtags = tweet.truncated ? tweet.extended_tweet.entities.hashtags : tweet.entities.hashtags
-        if (hashtags && hashtags.some((tag: any) => hashtag === tag.text.toUpperCase())) {
-          console.log(tweet)
-          ws.send(JSON.stringify(tweet))
+  client.stream(
+    'statuses/filter',
+    { track: `#${hashtag}` },
+    (stream: EventEmitter) => {
+      stream.on('data', (tweet: any) => {
+        if (!tweet.retweeted_status) {
+          const hashtags = tweet.truncated
+            ? tweet.extended_tweet.entities.hashtags
+            : tweet.entities.hashtags
+          if (
+            hashtags &&
+            hashtags.some((tag: any) => hashtag === tag.text.toUpperCase())
+          ) {
+            console.log(tweet)
+            ws.send(JSON.stringify(tweet))
+          }
         }
-      }
-    })
+      })
 
-    stream.on('error', (error: any) => {
-      console.log(error)
-    })
-  })
+      stream.on('error', (error: any) => {
+        console.log(error)
+      })
+    }
+  )
 })
