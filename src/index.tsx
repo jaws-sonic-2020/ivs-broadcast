@@ -4,6 +4,7 @@ import App from './App'
 import JavascriptTimeAgo from 'javascript-time-ago'
 import en from 'javascript-time-ago/locale/en'
 import ja from 'javascript-time-ago/locale/ja'
+import 'moment/locale/ja'
 
 JavascriptTimeAgo.addLocale(en)
 JavascriptTimeAgo.addLocale(ja)
