@@ -2,6 +2,8 @@
 
 declare var IVSPlayer: any
 
+declare var REACT_APP_IVS_STREAM: string
+
 declare type Tweet = {
   id: number
   id_str: string
