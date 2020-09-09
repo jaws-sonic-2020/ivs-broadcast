@@ -6,6 +6,7 @@ import Survey, { SurveyProps } from './Survey'
 
 const START = 'start:'
 const END = 'end:'
+const CLEAN = 'clean'
 
 function App() {
   const [surveyInfo, setSurveyInfo] = useState<SurveyProps[]>([])
@@ -14,15 +15,14 @@ function App() {
     console.log('Timed metadata', cue.text)
     if (cue.text.startsWith(START)) {
       const id = cue.text.substring(START.length)
-      setSurveyInfo((info) => [
-        { surveyId: id, isActive: true, start: new Date() },
-        ...info.filter((s) => s.surveyId !== id),
-      ])
+      setSurveyInfo([{ surveyId: id, isActive: true, start: new Date() }])
     } else if (cue.text.startsWith(END)) {
       const id = cue.text.substring(END.length)
       setSurveyInfo((info) =>
         info.map((s) => (s.surveyId === id ? { ...s, isActive: false } : s))
       )
+    } else if (cue.text.startsWith(CLEAN)) {
+      setSurveyInfo([])
     }
   }, [])
 
@@ -51,6 +51,11 @@ function App() {
           <Control>
             <Button isDanger onClick={() => putMetadata(END)}>
               end
+            </Button>
+          </Control>
+          <Control>
+            <Button isWarning onClick={() => putMetadata(CLEAN)}>
+              clean
             </Button>
           </Control>
         </Field>
