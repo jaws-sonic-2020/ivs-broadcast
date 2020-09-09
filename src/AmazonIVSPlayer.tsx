@@ -6,7 +6,6 @@ import {
 } from 'amazon-ivs-player'
 
 export type AmazonIVSPlayerProps = {
-  stream: string
   width: string | number
   onPlayerTextMetadataQue: (cue: TextMetadataCue) => void
 }
@@ -17,13 +16,16 @@ function AmazonIVSPlayer(props: AmazonIVSPlayerProps) {
   useEffect(() => {
     let player: MediaPlayer
     if (videoEl.current && IVSPlayer.isPlayerSupported) {
+      const rootEl = document.getElementById('ivs-player')!
+      const stream = rootEl.getAttribute('data-ivs-stream')!
+
       player = IVSPlayer.create()
       player.attachHTMLVideoElement(videoEl.current)
       player.addEventListener(
         PlayerEventType.TEXT_METADATA_CUE,
         props.onPlayerTextMetadataQue
       )
-      player.load(props.stream)
+      player.load(stream)
       player.play()
     }
 
@@ -35,7 +37,7 @@ function AmazonIVSPlayer(props: AmazonIVSPlayerProps) {
         )
       }
     }
-  }, [props.stream, props.onPlayerTextMetadataQue])
+  }, [props.onPlayerTextMetadataQue])
 
   return (
     <video ref={videoEl} playsInline autoPlay width={props.width} controls />

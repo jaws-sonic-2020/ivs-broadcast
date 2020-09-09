@@ -68,7 +68,6 @@ function App() {
       <AmazonIVSPlayer
         width="100%"
         onPlayerTextMetadataQue={handlePlayerTextMetadataQue}
-        stream={window.REACT_APP_IVS_STREAM}
       />
       {debugControl}
       {surveyInfo.map((s) => (
