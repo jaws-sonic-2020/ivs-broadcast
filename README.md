@@ -40,6 +40,22 @@ TWITTER_ACCESS_TOKEN_SECRET=
 HASHTAG=logben
 ```
 
+## アンケートの開始/終了
+
+`SURVEY_ID` は任意の文字列
+
+### 開始
+
+```console
+aws ivs put-metadata --channel-arn "my_channel" --metadata "start:SURVEY_ID"
+```
+
+### 終了
+
+```console
+aws ivs put-metadata --channel-arn "my_channel" --metadata "end:SURVEY_ID"
+```
+
 ## Websocket サーバの準備（ここは API Gateway に変わる予定）
 
 ```console
