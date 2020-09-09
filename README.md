@@ -26,18 +26,9 @@ ID プールを作成し、認証されていない ID のロールに、上記 
 ```bash
 # 画面用
 REACT_APP_IVS_STREAM=https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/video/v1/us-west-2.893648527354.channel.xhP3ExfcX8ON.m3u8
-REACT_APP_WS_URL=ws://localhost:8080/
-REACT_APP_HASHTAG='#jawssonic2020'
 REACT_APP_AWS_REGION=ap-northeast-1
 REACT_APP_AWS_IDPOOL_ID=
 REACT_APP_SURVEYS_TABLENAME=surveys
-# Twitter開発キー
-TWITTER_CONSUMER_KEY=
-TWITTER_CONSUMER_SECRET=
-TWITTER_ACCESS_TOKEN_KEY=
-TWITTER_ACCESS_TOKEN_SECRET=
-# Twitter検索タグ
-HASHTAG=logben
 ```
 
 ## アンケートの開始/終了
@@ -54,18 +45,6 @@ aws ivs put-metadata --channel-arn "my_channel" --metadata "start:SURVEY_ID"
 
 ```console
 aws ivs put-metadata --channel-arn "my_channel" --metadata "end:SURVEY_ID"
-```
-
-## Websocket サーバの準備（ここは API Gateway に変わる予定）
-
-```console
-yarn run wss
-```
-
-## Twitter 検索結果を Websocket サーバへ送信
-
-```console
-yarn run tweets
 ```
 
 ## Web サーバの起動
