@@ -47,6 +47,12 @@ aws ivs put-metadata --channel-arn "my_channel" --metadata "start:SURVEY_ID"
 aws ivs put-metadata --channel-arn "my_channel" --metadata "end:SURVEY_ID"
 ```
 
+### 非表示
+
+```console
+aws ivs put-metadata --channel-arn "my_channel" --metadata "clean"
+```
+
 ## Web サーバの起動
 
 ```console
