@@ -51,7 +51,7 @@ function Survey({ surveyId, isActive, start }: SurveyProps) {
                   date={start}
                   locale="ja"
                   tz="Asia/Tokyo"
-                  format="YYYY/MM/DD h:mm"
+                  format="YYYY/MM/DD H:mm"
                 />
                 {!isActive && ' (終了)'}
               </Title>
