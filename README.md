@@ -12,9 +12,9 @@
 | ---------------------------- | -------------------- |
 | id (文字列)                  | answer (数値)        |
 
-### IAM
+### Cognito ID プール
 
-上記 DynamoDB テーブルに対して以下のアクションを許可したユーザを作成し、アクセスキーを作成する
+ID プールを作成し、認証されていない ID のロールに、上記 DynamoDB テーブルに対して以下のアクションの権限を付与。
 
 - dynamodb:Query
 - dynamodb:UpdateItem
@@ -29,8 +29,7 @@ REACT_APP_IVS_STREAM=https://fcc3ddae59ed.us-west-2.playback.live-video.net/api/
 REACT_APP_WS_URL=ws://localhost:8080/
 REACT_APP_HASHTAG='#jawssonic2020'
 REACT_APP_AWS_REGION=ap-northeast-1
-REACT_APP_AWS_ACCESS_KEY_ID=
-REACT_APP_AWS_SECRET_ACCESS_KEY=
+REACT_APP_AWS_IDPOOL_ID=
 REACT_APP_SURVEYS_TABLENAME=surveys
 # Twitter開発キー
 TWITTER_CONSUMER_KEY=
