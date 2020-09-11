@@ -21,8 +21,8 @@ function Survey({ surveyId, isActive, start }: SurveyProps) {
     async (n: number) => {
       if (isActive && !selection) {
         try {
-          await vote(surveyId, n)
           setSelection(n)
+          await vote(surveyId, n)
         } catch (err) {
           console.log(err)
         }
