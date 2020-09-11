@@ -1,0 +1,289 @@
+.button {
+  appearance: none;
+  align-items: none;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: none;
+  display: inline-flex;
+  font-size: 1rem;
+  height: 2.5em;
+  justify-content: flex-start;
+  line-height: 1.5;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: calc(0.75em - 1px);
+  padding-right: calc(0.75em - 1px);
+  padding-top: calc(0.5em - 1px);
+  position: relative;
+  vertical-align: top;
+}
+
+.button:focus .button:active {
+  outline: none;
+}
+
+.button {
+  background-color: white;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  line-height: 1.5;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  position: relative;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button strong {
+  color: inherit;
+}
+
+.button:hover {
+  border-color: #b5b5b5;
+  color: #363636;
+}
+
+.button:focus {
+  border-color: #3273dc;
+  color: #363636;
+}
+
+.button:focus:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(50, 115, 220, 0.25);
+}
+
+.button:active {
+  border-color: #4a4a4a;
+  color: #363636;
+}
+
+.button.isLight {
+  background-color: whitesmoke;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+  cursor: not-allowed;
+}
+
+.button.isLight:hover {
+  background-color: #eeeeee;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button.isLight:focus {
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button.isLight:focus:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(245, 245, 245, 0.25);
+}
+
+.button.isLight:active {
+  background-color: #e8e8e8;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button.isInfo {
+  background-color: #3298dc;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isInfo:hover {
+  background-color: #2793da;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isInfo:focus {
+  border-color: #2793da;
+  color: #fff;
+}
+
+.button.isInfo:focus:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(50, 152, 220, 0.25);
+}
+
+.button.isInfo:active {
+  background-color: #238cd1;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isInfo.isLight {
+  background-color: #eef6fc;
+  color: #1d72aa;
+}
+
+.button.isInfo.isLight:hover {
+  background-color: #e3f1fa;
+  border-color: transparent;
+  color: #1d72aa;
+}
+
+.button.isInfo.isLight:active {
+  background-color: #d8ebf8;
+  border-color: transparent;
+  color: #1d72aa;
+}
+
+.button.isSuccess {
+  background-color: #48c774;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isSuccess:hover {
+  background-color: #3ec46d;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isSuccess:focus {
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isSuccess:focus:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(72, 199, 116, 0.25);
+}
+
+.button.isSuccess:active {
+  background-color: #3abb67;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isSuccess.isLight {
+  background-color: #effaf3;
+  color: #257942;
+}
+
+.button.isSuccess.isLight:hover {
+  background-color: #e6f7ec;
+  border-color: transparent;
+  color: #257942;
+}
+
+.button.isSuccess.isLight:active {
+  background-color: #dcf4e4;
+  border-color: transparent;
+  color: #257942;
+}
+
+.button.isWarning {
+  background-color: #ffdd57;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button.isWarning:hover {
+  background-color: #ffdb4a;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button.isWarning:focus {
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button.isWarning:focus:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(255, 221, 87, 0.25);
+}
+
+.button.isWarning:active {
+  background-color: #ffd83d;
+  border-color: transparent;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.button.isWarning.isLight {
+  background-color: #fffbeb;
+  color: #947600;
+}
+
+.button.isWarning.isLight:hover {
+  background-color: #fff8de;
+  border-color: transparent;
+  color: #947600;
+}
+
+.button.isWarning.isLight:active {
+  background-color: #fff6d1;
+  border-color: transparent;
+  color: #947600;
+}
+
+.button.isDanger {
+  background-color: #f14668;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isDanger:hover {
+  background-color: #f03a5f;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isDanger:focus {
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isDanger:focus:not(:active) {
+  box-shadow: 0 0 0 0.125em rgba(241, 70, 104, 0.25);
+}
+
+.button.isDanger:active {
+  background-color: #ef2e55;
+  border-color: transparent;
+  color: #fff;
+}
+
+.button.isDanger.isLight {
+  background-color: #feecf0;
+  color: #cc0f35;
+}
+
+.button.isDanger.isLight:hover {
+  background-color: #fde0e6;
+  border-color: transparent;
+  color: #cc0f35;
+}
+
+.button.isDanger.isLight:active {
+  background-color: #fcd4dc;
+  border-color: transparent;
+  color: #cc0f35;
+}
+
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.buttons .button {
+  margin-bottom: 0.5rem;
+}
+
+.buttons .button:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+.buttons:last-child {
+  margin-bottom: -0.5rem;
+}
+
+.buttons:not(:last-child) {
+  margin-bottom: 1rem;
+}

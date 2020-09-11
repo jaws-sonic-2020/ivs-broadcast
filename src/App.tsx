@@ -1,6 +1,5 @@
 import React, { useCallback, useState } from 'react'
 import { TextMetadataCue } from 'amazon-ivs-player'
-import { Container, Input, Button, Field, Control } from 'trunx'
 import AmazonIVSPlayer from './AmazonIVSPlayer'
 import Survey, { SurveyProps } from './Survey'
 
@@ -38,28 +37,12 @@ function App() {
       }
     }
     debugControl = (
-      <Container>
-        <Field hasAddons>
-          <Control>
-            <Input id="test" size={10} type="text" defaultValue="test" />
-          </Control>
-          <Control>
-            <Button isInfo onClick={() => putMetadata(START)}>
-              start
-            </Button>
-          </Control>
-          <Control>
-            <Button isDanger onClick={() => putMetadata(END)}>
-              end
-            </Button>
-          </Control>
-          <Control>
-            <Button isWarning onClick={() => putMetadata(CLEAN)}>
-              clean
-            </Button>
-          </Control>
-        </Field>
-      </Container>
+      <div>
+        <input id="test" size={10} type="text" defaultValue="test" />
+        <button onClick={() => putMetadata(START)}>start</button>
+        <button onClick={() => putMetadata(END)}>end</button>
+        <button onClick={() => putMetadata(CLEAN)}>clean</button>
+      </div>
     )
   }
 

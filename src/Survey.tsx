@@ -1,8 +1,9 @@
 import React, { useCallback, useState, useEffect } from 'react'
-import { Button, Buttons, Container, Title, Subtitle, Box } from 'trunx'
 import { Pie } from 'react-chartjs-2'
+import classNames from 'classnames'
 import Moment from 'react-moment'
 import 'moment-timezone'
+import styles from './Survey.module.css'
 
 import { vote, query } from './vote'
 
@@ -40,77 +41,79 @@ function Survey({ surveyId, isActive, start }: SurveyProps) {
   }, [surveyId, isActive, data])
 
   return (
-    <Container>
-      <Box>
-        <Title>アンケート {!isActive && ' (受付終了)'}</Title>
-        <Subtitle>
-          開始時間:{' '}
-          <Moment
-            date={start}
-            locale="ja"
-            tz="Asia/Tokyo"
-            format="YYYY/MM/DD H:mm"
-          />
-        </Subtitle>
-        <Buttons>
-          <Button
-            isInfo
-            isLight={(!!selection || !isActive) && selection !== 1}
-            onClick={() => handleClick(1)}
-          >
-            1
-          </Button>
-          <Button
-            isSuccess
-            isLight={(!!selection || !isActive) && selection !== 2}
-            onClick={() => handleClick(2)}
-          >
-            2
-          </Button>
-          <Button
-            isWarning
-            isLight={(!!selection || !isActive) && selection !== 3}
-            onClick={() => handleClick(3)}
-          >
-            3
-          </Button>
-          <Button
-            isDanger
-            isLight={(!!selection || !isActive) && selection !== 4}
-            onClick={() => handleClick(4)}
-          >
-            4
-          </Button>
-        </Buttons>
-        {selection && isActive && <p>投票済</p>}
-        {!isActive && !data && <p>集計中</p>}
-        {data && (
-          <Pie
-            data={{
-              datasets: [
-                {
-                  data,
-                  backgroundColor: [
-                    'hsl(204, 86%, 53%)',
-                    'hsl(141, 71%, 48%)',
-                    'hsl(48, 100%, 67%)',
-                    'hsl(348, 100%, 61%)',
-                  ],
-                },
-              ],
-              labels: ['1', '2', '3', '4'],
-            }}
-            options={{
-              legend: {
-                display: true,
-                position: 'right',
-                align: 'start',
+    <div>
+      <h2>アンケート {!isActive && ' (受付終了)'}</h2>
+      <h4>
+        開始時間:{' '}
+        <Moment
+          date={start}
+          locale="ja"
+          tz="Asia/Tokyo"
+          format="YYYY/MM/DD H:mm"
+        />
+      </h4>
+      <div className={styles.buttons}>
+        <button
+          className={classNames(styles.button, styles.isInfo, {
+            [styles.isLight]: (!!selection || !isActive) && selection !== 1,
+          })}
+          onClick={() => handleClick(1)}
+        >
+          1
+        </button>
+        <button
+          className={classNames(styles.button, styles.isSuccess, {
+            [styles.isLight]: (!!selection || !isActive) && selection !== 2,
+          })}
+          onClick={() => handleClick(2)}
+        >
+          2
+        </button>
+        <button
+          className={classNames(styles.button, styles.isWarning, {
+            [styles.isLight]: (!!selection || !isActive) && selection !== 3,
+          })}
+          onClick={() => handleClick(3)}
+        >
+          3
+        </button>
+        <button
+          className={classNames(styles.button, styles.isDanger, {
+            [styles.isLight]: (!!selection || !isActive) && selection !== 4,
+          })}
+          onClick={() => handleClick(4)}
+        >
+          4
+        </button>
+      </div>
+      {selection && isActive && <p>投票済</p>}
+      {!isActive && !data && <p>集計中</p>}
+      {data && (
+        <Pie
+          data={{
+            datasets: [
+              {
+                data,
+                backgroundColor: [
+                  'hsl(204, 86%, 53%)',
+                  'hsl(141, 71%, 48%)',
+                  'hsl(48, 100%, 67%)',
+                  'hsl(348, 100%, 61%)',
+                ],
               },
-            }}
-          />
-        )}
-      </Box>
-    </Container>
+            ],
+            labels: ['1', '2', '3', '4'],
+          }}
+          options={{
+            legend: {
+              display: true,
+              position: 'right',
+              align: 'start',
+            },
+          }}
+        />
+      )}
+    </div>
   )
 }
 
